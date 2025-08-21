@@ -6,11 +6,12 @@ test.describe('Login Page Tests', () => {
   });
 
   test('should navigate to ASX Online homepage', async ({ page }) => {
+    await page.waitForLoadState('networkidle');
     const mainHeading = page.locator('h1:has-text("Welcome to ASX Online")');
     await expect(mainHeading).toBeVisible();
-    await page.waitForLoadState('networkidle');
     await page.getByRole('link', { name: 'Sign-in' }).click();
     await page.getByRole('link', { name: 'Participant Participant' }).click();
+    await page.waitForLoadState('networkidle');
     await expect(page.locator('label').filter({ hasText: /^Email address$/ })).toBeVisible();
   });
 
