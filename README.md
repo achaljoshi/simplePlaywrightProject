@@ -62,3 +62,19 @@ npm run test:firefox:headed
 # Run Safari tests with visible browser
 npm run test:webkit:headed
 ```
+
+## Continuous Integration
+
+This project includes GitHub Actions workflow that automatically runs tests on:
+- **Push** to `main` or `develop` branches
+- **Pull Requests** to `main` branch
+
+The workflow:
+- Installs Node.js 18
+- Installs project dependencies
+- Installs Playwright browsers
+- Runs all tests across all browsers
+- Uploads test results and reports as artifacts
+- Stores artifacts for 30 days
+
+View workflow runs in the [Actions tab](https://github.com/achaljoshi/simplePlaywrightProject/actions) of your repository.
