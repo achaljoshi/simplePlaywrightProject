@@ -1,17 +1,7 @@
 # Simple Playwright Automation Project
 
-This is a basic Playwright automation project for testing the ASX Online website.
+This is a basic Playwright automation project for testing the ASX website.
 
-## Project Structure
-
-```
-simpleplaywright/
-├── package.json
-├── playwright.config.ts
-├── tests/
-│   └── loginPage.spec.ts
-└── README.md
-```
 
 ## Setup Instructions
 
@@ -47,27 +37,28 @@ npm run test:ui
 npm run test:debug
 ```
 
-## Test Description
+### Browser-Specific Testing
 
-The `loginPage.spec.ts` file contains a test class that:
+#### Run tests on specific browsers (headless)
+```bash
+# Run tests only on Chrome (Chromium)
+npm run test:chromium
 
-- Navigates to the ASX Online homepage (https://www.asxonline.com/)
-- Verifies the page loads correctly
-- Checks for login options and navigation elements
-- Validates the presence of key page sections
-- Tests basic search functionality
+# Run tests only on Firefox
+npm run test:firefox
 
-## Configuration
+# Run tests only on Safari (WebKit)
+npm run test:webkit
+```
 
-The project is configured to run tests against:
-- Chromium (Chrome)
-- Firefox
-- WebKit (Safari)
+#### Run tests on specific browsers with visible browser
+```bash
+# Run Chrome tests with visible browser
+npm run test:chromium:headed
 
-Tests will run in parallel by default and include screenshots on failure.
+# Run Firefox tests with visible browser
+npm run test:firefox:headed
 
-## Browser Support
-
-- Chrome (Chromium)
-- Firefox
-- Safari (WebKit)
+# Run Safari tests with visible browser
+npm run test:webkit:headed
+```

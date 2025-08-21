@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Login Page Tests', () => {
   test.beforeEach(async ({ page }) => {
-    // Navigate to ASX Online homepage before each test
     await page.goto('/');
   });
 
